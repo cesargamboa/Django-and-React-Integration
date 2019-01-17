@@ -1,10 +1,15 @@
 import React from 'react';
 import Article from '../components/Article';
+import FormLayoutDemo from '../components/Form';
 
 class ArticleList extends  React.Component{
   render(){
     return(
-        <Article />
+      <React.Fragment>
+      <Article />
+        <h1>Create an Article</h1>
+        <FormLayoutDemo type="create"/>
+      </React.Fragment>
     )
   }
 }
