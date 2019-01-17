@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-export function createArticle(id, data) {
-  let url = `http://127.0.0.1:8000/api/${id}`;
+export function createArticle(data) {
+  let url = `http://127.0.0.1:8000/api/`;
 
   return function (dispatch) { 
     console.log('got hre');

@@ -15,7 +15,7 @@ class FormLayoutDemo extends React.Component {
         content
       }
       if(this.props.type === "create"){
-        this.props.createArticle(this.props.match.pararms.articleID, data);
+        this.props.createArticle(data);
       }
       if(this.props.type === "update"){
         this.props.updateArticle(this.props.match.pararms.articleID, data);
@@ -54,8 +54,8 @@ const mapStateToProps = (state) => {
 };
 const  mapDispatchToProps = (dispatch)=> ({
 
-  createArticle: (id, data) => {
-      dispatch(createArticle(id, data));
+  createArticle: (data) => {
+      dispatch(createArticle(data));
     },
   updateArticle: (id, data) => {
       dispatch(updateArticle(id, data));
