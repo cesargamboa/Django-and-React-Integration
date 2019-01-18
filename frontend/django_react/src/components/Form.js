@@ -18,7 +18,7 @@ class FormLayoutDemo extends React.Component {
         this.props.createArticle(data);
       }
       if(this.props.type === "update"){
-        this.props.updateArticle(this.props.match.pararms.articleID, data);
+        this.props.updateArticle(this.props.articleID, data);
       }
   }
   render() {

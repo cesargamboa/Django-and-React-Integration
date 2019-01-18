@@ -9,12 +9,10 @@ class ArticleView extends React.Component {
     this.props.getArticleDetail(this.props.match.params.articleID);
   }
 render(){
-  console.log(this.props.detailView)
-  // console.log(this.props.match.params.articleID);
   return(
      <React.Fragment>
-     <CardComponent item={this.props.detailView}/>
-     <Form type="update"/>
+     <CardComponent item={this.props.formReducer.lenght? this.props.formReducer : this.props.detailView}/>
+     <Form type="update" articleID={this.props.match.params.articleID} />
      </React.Fragment>
     );
 }
@@ -23,6 +21,7 @@ render(){
 const mapStateToProps = (state) => {
   return { 
     detailView: state.detailView,
+    formReducer: state.formReducer,
   };
 };
 const  mapDispatchToProps = (dispatch)=> ({

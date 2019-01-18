@@ -4,7 +4,6 @@ export function createArticle(data) {
   let url = `http://127.0.0.1:8000/api/`;
 
   return function (dispatch) { 
-    console.log('got hre');
     axios.post(url, {
       title: data.title,
       content: data.content,
@@ -21,11 +20,10 @@ export function createArticle(data) {
 }
 
 export function updateArticle(id, data) {
-  let url = `http://127.0.0.1:8000/api/${id}`;
+  let url = `http://127.0.0.1:8000/api/${id}/`;
 
   return function (dispatch) { 
-    console.log('got hre');
-    axios.get(url,  {
+    axios.put(url,  {
       title: data.title,
       content: data.content,
     })

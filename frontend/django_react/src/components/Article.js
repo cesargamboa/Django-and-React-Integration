@@ -17,19 +17,18 @@ class Article extends React.Component {
     this.props.archiveList();
   }
   componentWillUpdate(nextProps){
-    console.log('this artchive', nextProps.listOfArticles);
     nextProps.listOfArticles.map(item => listData.push(item));
+    if(Array.isArray(nextProps.formReducer)){
+      nextProps.formReducer.map(newItem => listData.push(newItem));
+    }
   }
 render(){
-  console.log(this.props.listOfArticles);
   return(
      <List
     itemLayout="vertical"
     size="large"
     pagination={{
       onChange: (page) => {
-        console.log(page);
-        console.log(this.props.listOfArticles)
       },
       pageSize: 3,
     }}
@@ -57,6 +56,7 @@ render(){
 function mapStateToProps(state){
   return{
     listOfArticles: state.listOfArticles,
+    formReducer: state.formReducer,
   }
 }
 function matchDispatchToProp(dispatch){
